@@ -16,7 +16,9 @@
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
   --spacing-2xl: 4rem;
-  --max-width: 720px;
+  --max-width: 1280px;
+  --content-padding: 2rem;
+  --section-gap: 5rem;
   --transition: 0.2s ease;
 }
 
@@ -51,7 +53,7 @@ body {
 .header-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: var(--spacing-md) var(--spacing-lg);
+  padding: var(--spacing-md) var(--content-padding);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -90,7 +92,7 @@ body {
 main {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: var(--spacing-xl) var(--spacing-lg);
+  padding: var(--spacing-xl) var(--content-padding);
 }
 
 /* Hero */
@@ -115,7 +117,7 @@ main {
 
 /* Sections */
 .section {
-  margin-bottom: var(--spacing-2xl);
+  margin-bottom: var(--section-gap);
 }
 
 .section-title {
@@ -269,8 +271,8 @@ main a:hover {
 
 /* Footer */
 .site-footer {
-  margin-top: var(--spacing-2xl);
-  padding: var(--spacing-xl) var(--spacing-lg);
+  margin-top: var(--section-gap);
+  padding: var(--spacing-xl) var(--content-padding);
   background: #f8f9fa;
   border-top: 1px solid var(--color-border);
 }
@@ -326,11 +328,55 @@ main a:hover {
   margin: 0 0 var(--spacing-lg);
 }
 
+/* Desktop layout scale */
+@media (min-width: 1024px) {
+  main {
+    padding: 4rem var(--content-padding);
+  }
+
+  .hero {
+    padding: 6rem 0;
+  }
+
+  .hero h1 {
+    font-size: 2.75rem;
+    line-height: 1.2;
+  }
+
+  .hero .subheadline {
+    font-size: 1.25rem;
+    max-width: 36em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section {
+    margin-bottom: 6.25rem;
+  }
+
+  .section-title {
+    font-size: 1.35rem;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .service-card p {
+    font-size: 1rem;
+  }
+}
+
 /* Responsive */
 @media (max-width: 640px) {
   .header-inner {
     flex-direction: column;
     align-items: flex-start;
+    padding: var(--spacing-md) var(--spacing-md);
   }
 
   .site-nav {
@@ -342,7 +388,19 @@ main a:hover {
     padding: var(--spacing-lg) var(--spacing-md);
   }
 
+  .section {
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .hero {
+    padding: var(--spacing-2xl) 0;
+  }
+
   .hero h1 {
     font-size: 1.5rem;
+  }
+
+  .hero .subheadline {
+    font-size: 0.95rem;
   }
 }
